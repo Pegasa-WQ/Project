@@ -15,7 +15,7 @@ import MainLayout from './layouts/MainLayout.vue'
 export default {
   computed: {
     layout () {
-      return (this.$route.meta.layout || 'login') + '-layout'
+      return (this.$route.meta.layout || 'auth') + '-layout'
     }
   },
   components: {

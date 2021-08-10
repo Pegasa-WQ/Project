@@ -1,0 +1,66 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.btn {
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $basic-color;
+    border: 1px solid $basic-color;
+    color: $light-color;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    &:hover {
+        background-color: $basic-color;
+        opacity: 0.8;
+    }
+}
+
+.input {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1rem;
+    font-family: inherit;
+    color: $basic-color-text;
+    border: 1px solid $basic-color;
+    border-radius: 0.25rem;
+    background-color: $light-color;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: 0 0 0px 4px rgb(77 189 198 / 20%);
+    }
+}
+
+//Заголовки h2
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: $basic-color-text;
+    border-color: transparent;
+}
+
+//Стандартный текст 
+.text {
+    font-size: 18px;
+    line-height: 1.55;
+    font-weight: 400;
+    color: $basic-color-text;
+    border-color: transparent;
+}
