@@ -68,3 +68,7 @@
     </section>
   </div>
 </template>
+<style lang="scss">
+@import "../assets/style/roots.scss";
+@import "../assets/style/style.scss";
+</style>
