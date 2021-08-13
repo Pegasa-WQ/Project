@@ -1,41 +1,18 @@
 <template>
   <ul class="sidenav">
-    <li class="sidenav__item">
-      <a href="#" class="sidenav__link" @click.prevent="active = !active">Главная страница</a>
-      <!-- <ul class="items" v-show="active" :class="{ color: active }">
-         <li class="sidenav__item">
-         <a class="sidenav__link subitem" href="#"> Item 1-1</a></li>
-         <li class="sidenav__item">
-         <a class="sidenav__link subitem" href="#"> Item 1-2</a></li>
-         <li class="sidenav__item">
-         <a class="sidenav__link subitem" href="#"> Item 1-3</a></li>
-      </ul> -->
-    </li>
-    <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Управление пользователями</a>
-    </li>
-    <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Управление ролями</a>
-    </li>
-    <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Репозиторий</a>
-    </li>
-    <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Ревью</a>
-    </li>
-        <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Тест-план</a>
-    </li>
-        <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Тест-прогон</a>
-    </li>
-        <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Баг-репорты</a>
-    </li>
-    <li>
-        <li class="sidenav__item">
-      <a href="#" class="sidenav__link">Статистика</a>
-    </li>
+    <router-link
+      tag="li"
+      active-class="active"
+      :to="link.url"
+      class="sidenav__item"
+      v-for="(link, index) in links"
+      :key="index"
+      :exact="link.exact"
+    >
+      <a href="#" class="sidenav__link">
+        {{ link.title }}
+      </a>
+    </router-link>
   </ul>
 </template>
 <script>
@@ -43,7 +20,17 @@ export default {
   name: 'Sidebar',
   data () {
     return {
-      active: false
+      links: [
+        { title: 'Главная страница', url: '/', exact: true },
+        { title: 'Управление пользователями', url: '/users' },
+        { title: 'Управление ролями', url: '/roles' },
+        { title: 'Репозиторий', url: '/repository' },
+        { title: 'Ревью', url: '/review' },
+        { title: 'Тест-план', url: '/testplan' },
+        { title: 'Тест-прогон', url: '/testrun' },
+        { title: 'Баг-репорты', url: '/bugs' },
+        { title: 'Статистика', url: '/statistics' }
+      ]
     }
   },
   methods: {
@@ -53,15 +40,15 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../../assets/style/roots.scss";
+@import "../../assets/style/variables.scss";
 @import "../../assets/style/style.scss";
 .sidenav {
   margin: 0;
-  padding-top: 72px;
+  padding-top: 61px;
   padding-left: 0;
   width: 100%;
   height: 45rem;
-  max-width: 230px;
+  max-width: 235px;
   list-style: none;
   background-color: rgb(77, 189, 198, 0.1);
 }
@@ -82,26 +69,16 @@ display: block;
 .sidenav__link:hover {
   background-color: rgb(77, 189, 198, 0.2);
 }
-.arrow {
-background-image: url('../../assets/img/arrow.svg');
-background-size: 12px 8px;
-background-repeat: no-repeat;
-background-position: center;
-background-position-x: 90%;
-}
-.open {
-background-image: url('../../assets/img/arrowDown.svg');
-}
 .items {
 padding: 0;
 list-style: none;
 transition: color 0.2s ease-in-out;
 }
-.color {
-background-color: rgb(77, 189, 198, 0.4);
-}
 .subitem {
 padding: 6px 60px 6px 40px;
 font-size: 0.675rem;
+}
+.active {
+  background-color: rgb(77, 189, 198, 0.2);
 }
 </style>

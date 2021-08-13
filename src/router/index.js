@@ -18,6 +18,12 @@ export default new VueRouter({
       name: 'projects',
       meta: { layout: 'main' },
       component: () => import('../views/Projects.vue')
+    },
+    {
+      path: '/users',
+      name: 'users',
+      meta: { layout: 'main' },
+      component: () => import('../views/Users.vue')
     }
   ]
 })

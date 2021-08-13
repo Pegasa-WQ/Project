@@ -8,7 +8,7 @@
   </nav>
 </template>
 <style lang="scss">
-@import "../../assets/style/roots.scss";
+@import "../../assets/style/variables.scss";
 @import "../../assets/style/style.scss";
 .logo {
   font-size: 20px;
